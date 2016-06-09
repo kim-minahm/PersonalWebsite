@@ -1,0 +1,30 @@
+<div class="container">
+  <div ng-controller="PlateCalculatorController as plateCtrl">
+    <div class="row">
+      <h1 class="col-md-12" style="text-align: center">Barbell Plate Calculator</h1>
+    </div>
+    <div class="row">
+      <h1 class="col-md-12" style="text-align: center">{{totalWeight}} lbs</h1>
+    </div>
+    <div class="row">
+      <button class="col-sm-2 col-xs-12" type="button" ng-click="decrement(45)">Decrease 45 lbs</button>
+      <button class="col-sm-2 col-xs-12" type="button" ng-click="decrement(25)">Decrease 25 lbs</button>
+      <button class="col-sm-2 col-xs-12" type="button" ng-click="decrement(5)">Decrease 5 lbs</button>
+      <button class="col-sm-2 col-xs-12" type="button" ng-click="increment(5)">Increase by 5 lbs</button>
+      <button class="col-sm-2 col-xs-12" type="button" ng-click="increment(25)">Increase by 25 lbs</button>
+      <button class="col-sm-2 col-xs-12" type="button" ng-click="increment(45)">Increase by 45 lbs</button>
+    </div>
+    <div class="row">
+      <h2 class="col-md-12">Weights per side</h2>
+    </div>
+    <div class="row">
+      <div ng-repeat="weight in weights">
+        <h3 class="col-sm-4">{{weight.name}}: {{weight.count}}</h3>
+      </div>
+    </div>
+      <!-- <div ng-repeat="weight in weights">
+        <span ng-repeat="n in [] | range:{{weight.count}}">
+          <span class="{{weight.name}} plate col-sm-1"><span>
+        </span>
+      </div> -->
+</div>
