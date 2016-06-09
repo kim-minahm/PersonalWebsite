@@ -4,7 +4,7 @@ var path = require('path');
 var express = require('express');
 //Creating the app
 var app = express();
-x
+
 var port = process.env.PORT || 8080;
 //Allows for use of other files
 app.use('/app', express.static(path.join(__dirname,'app')));
@@ -18,8 +18,8 @@ app.get("/", function(req,res){
 //Starts the server listening on PORT
 
 
-app.listen('3000',function(){
-  console.log("Server Started");
+app.listen('port',function(){
+  console.log("Server Started, Listening on Port: ", app.get('port'));
 })
 
 
