@@ -21,3 +21,8 @@
   background-color: white;
   color: black;
 }
+
+.nav-button:active {
+  background-color: white;
+  color: black;
+}
