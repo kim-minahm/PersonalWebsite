@@ -87,6 +87,7 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
   }
 
   $scope.reset = function(){
+    $scope.clear();
     $scope.computer = newPlayer("Computer",10,1);
     $scope.player = newPlayer("Stig", 10, 1);
     $scope.finished = false;
