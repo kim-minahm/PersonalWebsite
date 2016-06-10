@@ -8,6 +8,9 @@ angular.module('ngPortfolio').controller('NavigationController', function($scope
     {title:'About', content:'someContent' ,disabled: false}
   ];
 
+  $scope.homeCollapsed = true;
+  $scope.projectsCollapsed = true;
+
   $scope.items = [
     "Weight Calculator",
     "DMV Happy Hour"

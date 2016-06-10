@@ -1,10 +1,19 @@
 <div class="container-fluid" ng-controller="NavigationController">
-  <div class="row">
-    <uib-tabset active="activeJustified" justified="true">
-      <uib-tab index="0" class="tab-title" heading="Home"></uib-tab>
-      <uib-tab index="1" class="tab-title" heading="Misc"></uib-tab>
-      <uib-tab index="2" class="tab-title" heading="Projects"><projects></projects></uib-tab>
-      <uib-tab index="3" class="tab-title" heading="About"></uib-tab>
-    </uib-tabset>
+  <div class="row" ng-init="tab = 1">
+    <div class="col-sm-3">
+      <button type="button" uib-button-radio="'set'" class="btn btn-primary nav-button" ng-click="tab = 1">Home</button>
+    </div>
+    <div class="col-sm-3">
+      <button type="button" uib-button-radio="'set'" class="btn btn-primary nav-button" ng-click="tab = 2">Misc</button>
+    </div>
+    <div class="col-sm-3">
+      <button type="button" uib-button-radio="'set'" class="btn btn-primary nav-button" ng-click="tab = 3">Projects</button>
+    </div>
+    <div class="col-sm-3">
+      <button type="button" uib-button-radio="'set'" class="btn btn-primary nav-button" ng-click="tab = 4">About</button>
+    </div>
   </div>
+  <br/>
+  <home ng-show="tab === 1"></home>
+  <projects ng-show="tab === 3"></projects>
 </div>

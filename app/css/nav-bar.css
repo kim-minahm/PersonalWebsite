@@ -7,3 +7,17 @@
   color: white;
   text-align: center;
 }
+.header{
+  height: 150px;
+  width: 100%;
+}
+
+.nav-button {
+  width: 100%;
+  background-color: black;
+
+}
+.nav-button:hover {
+  background-color: white;
+  color: black;
+}
