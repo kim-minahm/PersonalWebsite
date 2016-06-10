@@ -1,9 +1,35 @@
-<div class="container">
+<div class="container" ng-controller="duelController as DuelCtrl">
   <div class="row">
     <h1>DUEL</h1>
   </div>
   <div class="row">
+    <div class="col-xs-12">
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    </div>
   </div>
   <div class="row">
+    <div ng-repeat="choice in options">
+      <div class="col-xs-12 col-sm-4">
+        <button id="$index+1" type="button" class="btn btn-primary duel-button" ng-disabled="finished || $index == status" ng-click="choose($index+1); myChoice = $index+1;">{{choice}}</button>
+      </div>
+    </div>
+    <script type="text/ng-template" id="alert.html">
+      <div class="alert" style="background-color:#fa39c3;color:white" role="alert">
+        <div ng-transclude></div>
+      </div>
+    </script>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4" ng-bind="player.name"></div>
+    <div class="col-xs-12 col-sm-4" ng-bind="'Charge: '+player.charge"></div>
+    <div class="col-xs-12 col-sm-4" ng-bind="'Health: '+player.health"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4" ng-bind="computer.name"></div>
+    <div class="col-xs-12 col-sm-4" ng-bind="'Charge: '+computer.charge"></div>
+    <div class="col-xs-12 col-sm-4" ng-bind="'Health: '+computer.health"></div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary duel-button" ng-hide="!finished" ng-click="reset()">reset</button>
 </div>
+<link rel="stylesheet" href="app/css/duel.css">

@@ -26,3 +26,8 @@
   background-color: white;
   color: black;
 }
+
+.nav-button.active:hover {
+  background-color: white;
+  color: black;
+}

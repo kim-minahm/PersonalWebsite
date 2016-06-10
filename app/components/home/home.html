@@ -1,3 +1,16 @@
 <div class="container" ng-controller="HomeController as HomeCtrl">
-  <div>testing</div>
+  <div class="profile"></div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h1 class="bio">{{HomeCtrl.header}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <span>{{HomeCtrl.information}}</span>
+    </div>
+  </div>
 </div>
+
+
+<link rel="stylesheet" href="app/css/home.css">
