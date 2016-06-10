@@ -91,6 +91,7 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
     $scope.computer = newPlayer("Computer",10,1);
     $scope.player = newPlayer("Stig", 10, 1);
     $scope.finished = false;
+    $scope.status = -1;
   }
 
   //Alerts
