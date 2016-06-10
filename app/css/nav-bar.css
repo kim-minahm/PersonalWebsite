@@ -22,7 +22,7 @@
   color: black;
 }
 
-.nav-button:active {
+.nav-button.active {
   background-color: white;
   color: black;
 }
