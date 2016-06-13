@@ -81,6 +81,7 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
   var check = function(){
     if($scope.computer.health == 0 && $scope.player.health == 0){
       $scope.clear();
+      $scope.finished = true;
       $scope.addAlertMessage("You Tied!");
     }else if($scope.computer.health <= 0){
       $scope.clear();
