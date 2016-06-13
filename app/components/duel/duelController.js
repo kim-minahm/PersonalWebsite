@@ -18,12 +18,12 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
 
     //Charge is higher than health, so favor attacking
     if($scope.computer.charge >= $scope.player.health){
-      return (Math.floor(Math.random()*10) > 8 ?  computerChoice() : 1);
+      return (Math.floor(Math.random()*10) > 7 ?  computerChoice() : 1);
     }
 
-    //Player has higher charge, so 80% of the time block
+    //Player has higher charge, so 60% of the time block
     if($scope.player.charge >= $scope.computer.health){
-      return (Math.floor(Math.random()*10) > 8 ?  1 : 3);
+      return (Math.floor(Math.random()*10) >= 5 ?  1 : 3);
     }
 
     //Player has 0 charge, so no point in blocking. Attack is already if you have 0 charge so dont have to worry about that
