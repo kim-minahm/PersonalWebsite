@@ -31,12 +31,15 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
     if($scope.player.charge >= $scope.computer.health){
       return (Math.floor(Math.random()*10) > 8 ?  1 : 3);
     }
+
+    return option;
   }
 
   var resolve = function(option){
     $scope.clear();
     //1 is attack, 2 is charge, 3 is Block
     var compChoice = computerChoice();
+
 
     if(compChoice == 1 && option == 3){
       $scope.addAlert('success',"You blocked the Computer!")
