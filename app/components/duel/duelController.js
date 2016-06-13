@@ -12,16 +12,32 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
   $scope.player = newPlayer("Stig", 10, 1);
 
   var computerChoice = function(){
-    return Math.floor(Math.random()*3 +1);
+    return aiLogic(Math.floor(Math.random()*3 +1));
+  }
+
+  var aiLogic = function(option){
+    //Cannot attack with 0 charge, either block or charge
+    while(option==1 && $scope.computer.charge == 0){
+      option = computerChoice();
+      if(option != 1){
+        return option;
+      }
+    }
+
+    if($scope.computer.charge >= $scope.player.health){
+      return (Math.floor(Math.random()*10) > 8 ?  computerChoice() : 1);
+    }
+
+    if($scope.player.charge >= $scope.computer.health){
+      return (Math.floor(Math.random()*10) > 8 ?  1 : 3);
+    }
   }
 
   var resolve = function(option){
     $scope.clear();
     //1 is attack, 2 is charge, 3 is Block
     var compChoice = computerChoice();
-    while(compChoice==1 && $scope.computer.charge == 0){
-      compChoice = computerChoice();
-    }
+
     if(compChoice == 1 && option == 3){
       $scope.addAlert('success',"You blocked the Computer!")
       $scope.computer.charge = 0;
