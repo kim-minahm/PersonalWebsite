@@ -1,0 +1,27 @@
+.project-button {
+  color: black;
+  border: 1px;
+  border-style: solid;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+}
+
+.project-button:hover {
+
+  color: black;
+  background-color: white;
+}
+
+
+.project-button.active {
+  background: ;
+  background-color: black;
+  color: white;
+}
+
+.project-button.active:hover {
+  background: ;
+  background-color: black;
+  color: white;
+}

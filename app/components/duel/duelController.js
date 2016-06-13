@@ -1,15 +1,7 @@
 angular.module('ngPortfolio').controller('duelController', function($scope){
-  $scope.options=["Attack", "Charge", "Block"];
-
-  $scope.finished = false;
-  $scope.status = -1;
-
   var newPlayer = function(name, health, charge){
       return {name: name, health: health, charge: charge};
   }
-
-  $scope.computer = newPlayer("Computer",10,1);
-  $scope.player = newPlayer("Stig", 10, 1);
 
   var computerChoice = function(){
     return aiLogic(Math.floor(Math.random()*3 +1));
@@ -106,6 +98,9 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
   }
 
   $scope.reset = function(){
+    $scope.addAlertMessage(`Welcome to duel. You will fight a computer. 'Attack' will strike the computer with your entire charge,
+    depleting it back down to 0. 'Charge' will increase the damage your attack can do. 'Block' will nullify any damage done
+    by the computer that turn.`);
     $scope.clear();
     $scope.computer = newPlayer("Computer",10,1);
     $scope.player = newPlayer("Stig", 10, 1);
@@ -133,6 +128,19 @@ angular.module('ngPortfolio').controller('duelController', function($scope){
   $scope.clear = function() {
     $scope.alerts=[];
   };
+
+  $scope.addAlertMessage(`Welcome to duel. You will fight a computer. \n\t'Attack' will strike the computer with your entire charge,
+  depleting it back down to 0. \n\t'Charge' will increase the damage your attack can do. \n\t'Block' will nullify any damage done
+  by the computer that turn.`);
+
+  $scope.options=["Attack", "Charge", "Block"];
+
+  $scope.finished = false;
+  $scope.status = -1;
+
+  $scope.computer = newPlayer("Computer",10,1);
+  $scope.player = newPlayer("Stig", 10, 1);
+
 }).component('duel', {
   controller: function(){},
   templateUrl: "app/components/duel/duel.html"

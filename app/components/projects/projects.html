@@ -1,7 +1,28 @@
-<div class="container">
+<!-- <div class="container">
   <uib-tabset active="activePill" type="pills" class="row" justified="true">
       <uib-tab index="0" heading="Happy Hour"><happy-hour></happy-hour></uib-tab>
       <uib-tab index="1" heading="Barbell Plate Calculator"><plate-calculator></plate-calculator></uib-tab>
       <uib-tab index="2" heading="Duel"><duel></duel></uib-tab>
   </uib-tabset>
+</div> -->
+
+<div class="container" ng-init="projectTab===1">
+  <div class="row" >
+    <div class="col-xs-4">
+      <button type="button" ng-class="{active:projectTab===1}" class="btn btn-primary project-button" ng-click="projectTab = 1">Happy Hour</button>
+    </div>
+    <div class="col-xs-4">
+      <button type="button" ng-class="{active:projectTab===2}" class="btn btn-primary project-button" ng-click="projectTab = 2">Barbell Plate Calculator</button>
+    </div>
+    <div class="col-xs-4">
+      <button type="button" ng-class="{active:projectTab===3}" class="btn btn-primary project-button" ng-click="projectTab = 3">Duel</button>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <happy-hour ng-show="projectTab ===1"></happy-hour>
+    <plate-calculator ng-show="projectTab ===2"></plate-calculator>
+    <duel ng-show="projectTab===3"></duel>
+  </div>
 </div>
+<link rel="stylesheet" href="app/css/projects.css">

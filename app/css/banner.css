@@ -1,0 +1,11 @@
+.profile-picture {
+  border-radius: 50%;
+  background: url("../assets/profilePicture.jpg") 50% 50% no-repeat;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.bio {
+  text-align: center;
+}
